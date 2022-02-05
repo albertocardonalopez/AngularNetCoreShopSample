@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core.Entities;
+using Core.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
@@ -6,16 +8,25 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        [HttpGet]
-        public string GetProducts()
+        private IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
         {
-            return "";
+            _productRepository = productRepository;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Product>>> GetProducts()
+        {
+            var products = await _productRepository.GetAllProductsAsync();
+
+            return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public string GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return "";
+            return await _productRepository.GetProductByIdAsync(id);
         }
     }
 }
