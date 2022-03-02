@@ -16,6 +16,7 @@
 		<PrivateAssets>all</PrivateAssets>
 		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	</PackageReference>
+	<PackageReference Include="StackExchange.Redis" Version="2.2.88" />
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 	<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.3" />
 	<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
