@@ -19,7 +19,24 @@
         </ng-container>
 
         <ng-container *ngIf="currentUser$ | async">
-            <a href="#">Welcome {{(currentUser$ | async)?.displayName}}</a>
+            <div class="dropdown ms-3 me-5" dropdown>
+                <a  class="dropdown-toggle" style="cursor: pointer;" dropdownToggle
+                    ><strong>Welcome {{(currentUser$ | async)?.displayName}}</strong>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer;"
+                    *dropdownMenu>
+                    <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">
+                        <i class="fa fa-shopping-cart me-3"></i> View Basket
+                    </a>
+                    <a routerLink="/orders" class="dropdown-item d-flex align-items-center py-2">
+                        <i class="fa fa-history me-3"></i> View Orders
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
+                        <i class="fa fa-sign-out me-3"></i> Logout
+                    </a>
+                </div>
+            </div>
         </ng-container>
     </div>
 </div>
