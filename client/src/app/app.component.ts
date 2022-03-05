@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { BasketService } from './basket/basket.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { BasketService } from './basket/basket.service';
 })
 export class AppComponent implements OnInit {
   title = 'Angular Shop App Sample';
+  client_env = environment.env;
 
   constructor(private basketService: BasketService) {}
 
