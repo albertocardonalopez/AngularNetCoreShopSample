@@ -14,6 +14,12 @@
               formControlName="password"
               [label]="'Password'"
               [type]="'password'"></app-text-input>
+
+            <ul class="text-danger list-unstyled" *ngIf="errors">
+                <li *ngFor="let error of errors">
+                    {{error}}
+                </li>
+            </ul>
         
             <div class="checkbox mb-3">
               <label>
@@ -21,7 +27,7 @@
               </label>
             </div>
 
-            <button [disabled]="registerForm.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+            <button  class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
           </form>
     </div>
 </div>
