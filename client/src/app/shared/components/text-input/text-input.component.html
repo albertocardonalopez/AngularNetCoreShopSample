@@ -1,7 +1,7 @@
 <div class="form-floating my-3">
     <input  
         [ngClass]="
-            (controlDir && controlDir.control && !controlDir.control.valid && controlDir.control.touched) 
+            (controlDir && controlDir.control && controlDir.control.touched) 
             ? !controlDir.control.valid 
                 ? 'is-invalid' 
                 : 'is-valid' 
